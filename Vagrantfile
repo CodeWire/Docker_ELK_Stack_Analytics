@@ -6,11 +6,14 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "etailer/ubuntu-13.10"
+
+# Laravel 4.2 Ubuntu 14.04 
+  config.vm.box = "bento/ubuntu-14.04"
+
 
   config.vm.network "public_network"
 
-  config.vm.synced_folder ".", "/workspace"
+  config.vm.synced_folder ".", "/workspace/"
 
   config.vm.provision "docker"
 
