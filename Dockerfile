@@ -1,9 +1,8 @@
 #Kibana
 
 FROM ubuntu
- 
-RUN echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list && \
-    echo 'deb http://archive.ubuntu.com/ubuntu precise-updates universe' >> /etc/apt/sources.list && \
+
+RUN echo 'deb http://packages.ubuntu.com/trusty-updates main universe' > /etc/apt/sources.list && \
     apt-get update
 
 #Prevent daemon start during install
@@ -61,7 +60,7 @@ RUN wget https://download.elasticsearch.org/logstash/logstash/logstash-1.4.0.tar
 	tar xf logstash-*.tar.gz && \
     rm logstash-*.tar.gz && \
     mv logstash-* logstash
-    
+
 #LogGenerator
 RUN git clone https://github.com/vspiewak/log-generator.git && \
 	cd log-generator && \
